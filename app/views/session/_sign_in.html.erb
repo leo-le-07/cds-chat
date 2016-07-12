@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-block">
+    <h3 class="card-title">Login like a Deadpool hero</h3>
+    <div class="card-text">
+      <%= form_tag("/session", method: "post") do %>
+        <fieldset class="form-group">
+          <%= label_tag "email", "Email" %>
+          <%= email_field_tag "email", nil, class: "form-control", placeholder: "Your email" %>
+        </fieldset>
+        <fieldset class="form-group">
+          <%= label_tag "password", "Password" %>
+          <%= password_field_tag "password", nil, class: "form-control" %>
+        </fieldset>
+        <%= submit_tag "Sign in", class: "btn btn-primary" %>
+        <%= link_to "Become a Deadpool hero now!", "/signup" %>
+      <% end %>
+    </div>
+  </div>
+</div>

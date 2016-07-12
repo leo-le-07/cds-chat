@@ -1,0 +1,23 @@
+<div class="container welcome">
+  <% if flash[:notice] %>
+    <div class="row alert alert-warning">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+  <div class="row header">
+    <h1>Welcome to Deadpool Chat</h1>
+    <p>We don't keep your message. Haha!</p>
+  </div>
+  <div class="row body">
+    <div class="col-md-6">
+      <div class="welcome-image"></div>
+    </div>
+    <div class="col-md-6">
+      <% if sign_up == true %>
+        <%= render partial: "users/sign_up" %>
+      <% else %>
+        <%= render partial: "session/sign_in" %>
+      <% end %>
+    </div>
+  </div>
+</div>
