@@ -1,0 +1,34 @@
+user (sender / receiver)
+  - full name
+  - email
+  - password
+
+friend
+  - user_id
+  - friend_id
+
+send_message (get status & open_at of last send msg detail)
+  - user_id
+  - receiver_id
+
+send_message_detail (can only see the message the first time he/she send, after that, can't see content, just see status)
+  - send_message_id
+  - content
+  - status
+  - open_at
+
+incoming_message
+  - user_id
+  - sender_id
+  - status
+  - open_at
+
+incoming_message_detail
+  - incoming_message_id
+  - content
+  - status
+  - open_at
+
+blacklist_friend
+  - user_id
+  - blacklist_friend_id
