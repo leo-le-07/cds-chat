@@ -1,0 +1,10 @@
+.welcome {
+  div.welcome-image {
+    display: block;
+    width: 500px;
+    height: 500px;
+    background-image: image_url("welcome/big-head-deadpool.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
