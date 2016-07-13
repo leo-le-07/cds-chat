@@ -10,10 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160712133155) do
+ActiveRecord::Schema.define(version: 20160713002534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "incoming_message_details", force: :cascade do |t|
+    t.integer  "incoming_message_id"
+    t.string   "content"
+    t.integer  "status"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["incoming_message_id"], name: "index_incoming_message_details_on_incoming_message_id", using: :btree
+  end
+
+  create_table "incoming_messages", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "sender_id"
+    t.integer  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sent_message_details", force: :cascade do |t|
+    t.integer  "sent_message_id"
+    t.string   "content"
+    t.integer  "status"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["sent_message_id"], name: "index_sent_message_details_on_sent_message_id", using: :btree
+  end
+
+  create_table "sent_messages", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "receiver_id"
+    t.integer  "status"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -23,4 +57,6 @@ ActiveRecord::Schema.define(version: 20160712133155) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "incoming_message_details", "incoming_messages"
+  add_foreign_key "sent_message_details", "sent_messages"
 end

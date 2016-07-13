@@ -1,0 +1,11 @@
+body {
+  ul.nav.navbar-nav {
+    margin-top: 3px;
+  }
+}
+
+@media (min-width: 544px) {
+  .navbar {
+    border-radius: 0;
+  }
+}

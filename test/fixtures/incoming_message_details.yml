@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  incoming_message: one
+  content: MyString
+  status: 1
+  open_at: 
+
+two:
+  incoming_message: two
+  content: MyString
+  status: 1
+  open_at: 

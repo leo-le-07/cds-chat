@@ -1,2 +1,33 @@
-<h1>IncomingMessages#index</h1>
-<p>Find me in app/views/incoming_messages/index.html.erb</p>
+<div class="container incoming">
+  <div class="row header">
+    <div class="col-sm-6">
+      <i class="fa fa-comments-o fa-lg" aria-hidden="true"></i> New message
+    </div>
+    <div class="col-sm-6 sort-group">
+      <div class="btn-group" role="group" aria-label="Sorting">
+        <button class="btn btn-secondary">All</button>
+        <button class="btn btn-secondary">Unread</button>
+        <button class="btn btn-secondary">Read</button>
+      </div>
+    </div>
+  </div>
+  <div class="row message-container">
+    <div class="list-group">
+      <div class="card">
+        <div class="card-block">
+          <span class="label label-default label-pill pull-xs-right">14</span>
+          <h6 class="card-title name-unread">Alex Rider</h6>
+          <p class="card-text lead">2 minutes ago</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-block">
+          <h6 class="card-title name-read">Blex Rider</h6>
+          <p class="card-text">
+            <a href="" class="btn btn-success"><i class="fa fa-reply" aria-hidden="true"></i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

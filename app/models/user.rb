@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  before_create :downcase_fields!
+  before_create :downcase_fields
 
   has_secure_password
 
@@ -13,7 +13,7 @@ class User < ApplicationRecord
   end
 
   private
-    def downcase_fields!
+    def downcase_fields
       self[:email].downcase!
     end
 

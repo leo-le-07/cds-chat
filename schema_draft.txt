@@ -10,6 +10,8 @@ friend
 send_message (get status & open_at of last send msg detail)
   - user_id
   - receiver_id
+  - status
+  - open_at
 
 send_message_detail (can only see the message the first time he/she send, after that, can't see content, just see status)
   - send_message_id
@@ -26,6 +28,12 @@ incoming_message
 incoming_message_detail
   - incoming_message_id
   - content
+  - status
+  - open_at
+
+message
+  - sender_id
+  - receiver_id
   - status
   - open_at
 
