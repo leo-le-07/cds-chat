@@ -3,12 +3,18 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  has_many :conversations
+  has_many :messages
+
   validates :name, presence: true
   validates :email, presence: true, uniqueness: {case_sensitive: false}
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 
   def self.login(email, password)
     user = User.find_by(email: email.downcase)
+    unless user
+      return nil
+    end
     user if user.try(:authenticate, password)
   end
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :conversations
   resources :users
   resources :incoming_messages, only: [:index]
   resources :session, only: [:create, :index]

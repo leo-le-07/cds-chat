@@ -1,0 +1,26 @@
+<div class="container conversation">
+  <div class="row header">
+    <h1>Alex</h1>
+  </div>
+  <div class="row conversation-content">
+    <div class="list-group">
+      <% if @messages.any? %>
+        <%= render partial: "message", collection: @messages %>
+      <% else %>
+        <div class="card">
+          <div class="card-block">
+            <p class="card-text lead">Start chat now ...</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row message-sent-box">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Send your message ...">
+      <span class="input-group-btn">
+        <a href="" class="btn"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+      </span>
+    </div>
+  </div>
+</div>

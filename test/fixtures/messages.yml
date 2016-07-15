@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  conversation: one
+  content: MyString
+  status: 1
+  open_at: 2016-07-14 07:41:11
+
+two:
+  conversation: two
+  content: MyString
+  status: 1
+  open_at: 2016-07-14 07:41:11

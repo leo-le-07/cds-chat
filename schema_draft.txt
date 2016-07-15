@@ -3,6 +3,16 @@ user (sender / receiver)
   - email
   - password
 
+conversation
+  - sender_id
+  - recipient_id
+
+message
+  - conversation_id
+  - content
+  - status
+  - open_at
+
 friend
   - user_id
   - friend_id

@@ -1,7 +1,9 @@
 <div class="container incoming">
   <div class="row header">
     <div class="col-sm-6">
-      <i class="fa fa-comments-o fa-lg" aria-hidden="true"></i> New message
+      <%= link_to new_conversation_path do %>
+        <i class="fa fa-comments-o fa-lg" aria-hidden="true"></i> New message
+      <% end %>
     </div>
     <div class="col-sm-6 sort-group">
       <div class="btn-group" role="group" aria-label="Sorting">
@@ -24,7 +26,7 @@
         <div class="card-block">
           <h6 class="card-title name-read">Blex Rider</h6>
           <p class="card-text">
-            <a href="" class="btn btn-success"><i class="fa fa-reply" aria-hidden="true"></i></a>
+            <a href=""><i class="fa fa-reply" aria-hidden="true"></i> Reply</a>
           </p>
         </div>
       </div>

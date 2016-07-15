@@ -1,0 +1,99 @@
+.conversation {
+  .header {
+    margin-top: 7px;
+  }
+
+  .conversation-content {
+    max-height: 500px;
+    overflow-y: scroll;
+
+    span.input-group-btn {
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+
+      a {
+        padding: 0.3rem 1rem;
+      }
+    }
+
+    .message {
+      .avatar-icon, .text-container {
+        display: inline-block;
+      }
+      .text {
+        font-size: 1rem;
+      }
+      .float-right {
+        float: right;
+        margin-left: 7px;
+      }
+      .float-left {
+        float: left;
+        margin-right: 7px;
+      }
+      .triangle-right {
+        position:relative;
+        padding:15px;
+        margin: 0 0 .5em;
+        color:#fff;
+        background:#075698; /* default background for browsers without gradient support */
+        /* css3 */
+        background:-webkit-gradient(linear, 0 0, 0 100%, from(#2e88c4), to(#075698));
+        background:-moz-linear-gradient(#2e88c4, #075698);
+        background:-o-linear-gradient(#2e88c4, #075698);
+        background:linear-gradient(#2e88c4, #075698);
+        -webkit-border-radius:10px;
+        -moz-border-radius:10px;
+        border-radius:10px;
+      }
+      .triangle-right.right {
+        margin-right:40px;
+        background:#075698;
+      }
+      .triangle-right:after {
+        content:"";
+        position:absolute;
+        bottom:-20px; /* value = - border-top-width - border-bottom-width */
+        left:50px; /* controls horizontal position */
+        border-width:20px 0 0 20px; /* vary these values to change the angle of the vertex */
+        border-style:solid;
+        border-color:#075698 transparent;
+        /* reduce the damage in FF3.0 */
+        display:block;
+        width:0;
+      }
+      .triangle-right.right:after {
+        top:16px;
+        right:-40px; /* value = - border-left-width - border-right-width */
+        bottom:auto;
+        left:auto;
+        border-width:15px 0 0 40px; /* vary these values to change the angle of the vertex */
+        border-color:transparent #075698 ;
+      }
+      .triangle-right.left {
+        margin-left:40px;
+        background: #e0e0e0;
+        color: #000;
+      }
+      .triangle-right.left:after {
+        top:16px;
+        left:-40px; /* value = - border-left-width - border-right-width */
+        bottom:auto;
+        border-width:15px 40px 0 0; /* vary these values to change the angle of the vertex */
+        border-color:transparent #e0e0e0;
+      }
+      display: inline-block;
+      width: 100%;
+    }
+
+    .owner {
+      text-align: right;
+    }
+  }
+
+  .message-sent-box {
+    margin-top: 1.1rem;
+  }
+}

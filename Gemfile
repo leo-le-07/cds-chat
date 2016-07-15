@@ -34,6 +34,7 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'rails-assets-tether'
 gem 'bcrypt', '~> 3.1.7'
 gem 'font-awesome-rails'
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
