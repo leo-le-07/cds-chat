@@ -20,7 +20,7 @@
             <%= link_to "Sent Messages", nil, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to "Add Friend", nil, class: 'nav-link' %>
+            <%= link_to "Friends", friendships_path, class: 'nav-link' %>
           </li>
         </ul>
         <div class="pull-xs-right">
@@ -35,6 +35,7 @@
         </div>
       </nav>
     <% end %>
+    <%= flash_messages %>
     <%= yield %>
   </body>
 </html>

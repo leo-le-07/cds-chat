@@ -1,0 +1,17 @@
+<div class="container friends">
+  <div class="row header">
+    <div class="col-md-4">
+      <h1>Your friends (<%= @friends.size %>)</h1>
+    </div>
+    <div class="col-md-8 btn-add-new">
+      <%= link_to new_friendship_path, class: "btn btn-primary" do %>
+        <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i> Add more friends
+      <% end %>
+    </div>
+  </div>
+  <div class="row body">
+    <div class="list-group">
+      <%= render partial: "friend", collection: @friends %>
+    </div>
+  </div>
+</div>

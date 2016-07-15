@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   has_many :conversations
   has_many :messages
+  has_many :friends, through: :friendships
+  has_many :friendships
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: {case_sensitive: false}
