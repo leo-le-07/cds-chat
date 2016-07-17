@@ -31,7 +31,7 @@ gem 'redis', '~> 3.0'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap', '~> 4.0.0.alpha3'
-gem 'rails-assets-tether'
+gem 'rails-assets-tether', '~> 1.1', '>= 1.1.1'
 gem 'bcrypt', '~> 3.1.7'
 gem 'font-awesome-rails'
 gem 'faker'
