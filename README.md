@@ -25,7 +25,7 @@ The following **required** functionality is complete:
 
 The following **optional** functionality is complete:
 
-* [ ] User can attach an image.
+* [x] User can attach an image.
 * [ ] User can have multiple recipients on one message.
 * [x] User can log in with Facebook.
 * [ ] User A can "block" User B. If User A blocks User B, they will not see messages from User B. User B will not know they have been blocked.
@@ -40,7 +40,7 @@ The following **additional** features are implemented:
 
 * [x] You can send many messages in the one time. The recipient will be see the number of messages he/she doesn't read.
 * [x] When the conversation dialog so long, it can scroll bottom automatically. I think it's a good UX for users
-* [x] I use ActionCable to create a unique channel for 2 users for chatting. This feature requires redis installation. However, I can't verify my credit account on heroku so I can't install **redistogo** addon. In the end of the day, it only works on my local machine :)
+* [x] I use ActionCable to create a websocket channel for 2 users for chatting. However, this is still a basic feature because ActionCable can't access the session to get the current_user. So it leads to the consequence that I can't detect when a user come or out the connection of the reservation channel.
 * [x] I think it becomes a chat app better when I merge the incoming and sent messages in to one page
 
 ## Video Walkthrough
@@ -51,7 +51,6 @@ Here's a walkthrough of implemented user stories:
 
 ## Notes
 
-* I met the problem with ActionCable when it can't access the session to get the current_user. It leads to the consequence that I can't detect when a user come or out the connection of the reservation channel.
 * In case of you cann't sign up or sign in by Facebook, please press Ctrl + F5 to refresh the page in order to make it work. I still don't know the root cause, but maybe cause of Turbolinks javascript.
 
 ## License

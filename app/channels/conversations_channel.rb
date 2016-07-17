@@ -10,6 +10,6 @@ class ConversationsChannel < ApplicationCable::Channel
 
   def send_message(data)
     conversation = Conversation.find(data['conversation_id'])
-    conversation.messages.create!(content: data['message'], user_id: data['sid'])
+    conversation.messages.create!(content: data['message'], user_id: data['sid'], image_url: data['image_url'])
   end
 end

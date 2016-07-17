@@ -1,5 +1,6 @@
 jQuery(document).on 'turbolinks:load', ->
   messages = $('#messages')
+  filepicker = $('#message_image_url')
   if messages.length > 0
     messages_to_bottom = -> messages.scrollTop(messages.prop("scrollHeight"))
 
@@ -20,7 +21,7 @@ jQuery(document).on 'turbolinks:load', ->
         messages_to_bottom()
 
       send_message: (message, conversation_id) ->
-        @perform 'send_message', message: message, conversation_id: conversation_id, sid: messages.data('sid'), rid: messages.data('rid')
+        @perform 'send_message', message: message, conversation_id: conversation_id, sid: messages.data('sid'), rid: messages.data('rid'), image_url: filepicker.val()
 
     $('#new_message').submit (e) ->
       $this = $(this)
