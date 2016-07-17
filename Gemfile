@@ -35,6 +35,8 @@ gem 'rails-assets-tether', '~> 1.1', '>= 1.1.1'
 gem 'bcrypt', '~> 3.1.7'
 gem 'font-awesome-rails'
 gem 'faker'
+gem 'kaminari'
+gem 'jquery-infinite-pages'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

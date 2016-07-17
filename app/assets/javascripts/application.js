@@ -16,4 +16,5 @@
 //= require bootstrap
 //= require turbolinks
 //= require cable
+//= require jquery.infinite-pages
 //= require_tree .

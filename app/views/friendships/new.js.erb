@@ -1,0 +1,9 @@
+$("<%=j render(:partial => 'new_friend', :object => @new_friends) %>")
+  .appendTo($(".infinite-new-friends"));
+
+<% if @new_friends.last_page? %>
+  $('.pagination').html("You've already reached the end page. Hehe!");
+<% else %>
+  $('.pagination')
+    .html("<%=j link_to_next_page(@new_friends, 'Next Page', :remote => true) %>");
+<% end %>

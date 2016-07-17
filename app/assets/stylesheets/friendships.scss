@@ -21,6 +21,7 @@
         height: 70px;
         float: left;
         margin-right: 20px;
+        margin-left: 20px;
       }
       .user-name {
         font-size: 1.3rem;
@@ -40,8 +41,9 @@
 }
 .add_friends {
   .header {
-    margin-top: 7px;
+    margin-top: 20px;
     margin-bottom: 10px;
+    color: #7e3d96;
   }
   .body {
     .user {
@@ -61,6 +63,7 @@
         height: 70px;
         float: left;
         margin-right: 20px;
+        margin-left: 20px;
       }
     }
   }

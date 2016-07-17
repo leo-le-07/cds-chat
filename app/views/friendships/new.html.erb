@@ -1,10 +1,11 @@
 <div class="container add_friends">
   <div class="row header">
-    <h1>Add new friend</h1>
+    <h3>Add new friends</h3>
   </div>
-  <div class="row body">
-    <div class="list-group">
-      <%= render partial: "new_friend", collection: @new_friends %>
-    </div>
+  <div class="row body infinite-new-friends">
+    <%= render partial: "new_friend", object: @new_friends %>
   </div>
+  <p class="pagination">
+    <%= link_to_next_page(@new_friends, 'Next Page', :remote => true) %>
+  </p>
 </div>
