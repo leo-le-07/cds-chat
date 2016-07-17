@@ -16,6 +16,7 @@ class ConversationEmailsController < ApplicationController
       conversation = Conversation.create!(sender_id: current_user.id, recipient_id: new_user.id)
     end
     conversation.messages.create!(content: conversation_params['content'], user_id: current_user.id)
+    MessageToUnregisteredUserMailer.signup_email(current_user, new_user.email).deliver
     flash[:success] = "Your message has sent"
     redirect_to root_path
   end

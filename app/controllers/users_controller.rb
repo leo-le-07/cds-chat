@@ -6,7 +6,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.where(email: user_params[:email], registered: false).first
+    if @user
+      byebug
+      @user.name = user_params[:name]
+      @user.password = user_params[:password]
+      @user.registered = true
+    else
+      byebug
+      @user = User.new(user_params)
+    end
     if @user.save
       session[:user_id] = @user.id
       redirect_to root_path
