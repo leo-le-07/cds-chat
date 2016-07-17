@@ -8,12 +8,10 @@ class UsersController < ApplicationController
   def create
     @user = User.where(email: user_params[:email], registered: false).first
     if @user
-      byebug
       @user.name = user_params[:name]
       @user.password = user_params[:password]
       @user.registered = true
     else
-      byebug
       @user = User.new(user_params)
     end
     if @user.save
@@ -23,6 +21,12 @@ class UsersController < ApplicationController
       flash[:notice] = @user.errors.full_messages.to_sentence
       render "new"
     end
+  end
+
+  def create_by_facebook
+    @user = User.from_omniauth(env["omniauth.auth"])
+    session[:user_id] = @user.id
+    redirect_to root_path
   end
 
   private

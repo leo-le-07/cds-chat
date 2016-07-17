@@ -15,8 +15,9 @@
           <%= user.label :password, "Password" %>
           <%= user.password_field :password, class: "form-control" %>
         </fieldset>
-        <%= user.submit "Sign up", class: "btn btn-primary" %>
-        <%= link_to "I'm already a Deadpool hero", "/login" %>
+        <%= user.submit "Sign up", class: "btn btn-primary-outline" %>
+        <a href="" id="sign_in_fb"><img src="/assets/FB-f-Logo__blue_50.png" alt="fb-logo" style="width: 36px;margin-left: 16px;margin-right: 16px;"></a>
+        <div style="margin-top: 10px;"><%= link_to "I'm already a Deadpool hero", "/login" %></div>
       <% end %>
     </div>
   </div>

@@ -11,8 +11,9 @@
           <%= label_tag "password", "Password" %>
           <%= password_field_tag "password", nil, class: "form-control" %>
         </fieldset>
-        <%= submit_tag "Sign in", class: "btn btn-primary" %>
-        <%= link_to "Become a Deadpool hero now!", "/signup" %>
+        <%= submit_tag "Sign in", class: "btn btn-primary-outline" %>
+        <a href="" id="sign_in_fb"><img src="/assets/FB-f-Logo__blue_50.png" alt="fb-logo" style="width: 36px;margin-left: 16px;margin-right: 16px;"></a>
+        <div style="margin-top: 10px;"><%= link_to "Become a Deadpool hero now!", "/signup" %></div>
       <% end %>
     </div>
   </div>

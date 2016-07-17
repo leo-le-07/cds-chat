@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :users
   resources :session, only: [:create, :index]
   resources :conversation_emails, only: [:new, :create]
+  match 'auth/:provider/callback', to: 'users#create_by_facebook', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
   get 'login' => 'session#new'
   get 'logout' => 'session#destroy'
   get 'signup' => 'users#new'
