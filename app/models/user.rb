@@ -20,6 +20,10 @@ class User < ApplicationRecord
     user if user.try(:authenticate, password)
   end
 
+  def short_name_avatar
+    name.scan(/\b[a-z]/i).join.upcase.first(2)
+  end
+
   private
     def downcase_fields
       self[:email].downcase!

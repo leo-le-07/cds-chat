@@ -1,13 +1,13 @@
 <div class="card user">
   <div class="card-block">
-  <div>
-      <img src="avatar-default.png">
-      <span class="card-text lead"><%= new_friend.name %></span>
-    </div>
-    <div>
-      <%= link_to friendships_path(friend_id: new_friend.id), method: :post, class: "add-btn" do %>
-        <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i> Add friend
-      <% end %>
+    <div class="row">
+      <div class="avatar"><%= new_friend.short_name_avatar %></div>
+      <div class="user-block">
+        <p class="card-text lead user-name"><%= new_friend.name %></p>
+        <%= link_to friendships_path(friend_id: new_friend.id), method: :post, class: "add-btn" do %>
+          <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i> Add friend
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

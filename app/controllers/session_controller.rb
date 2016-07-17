@@ -8,6 +8,7 @@ class SessionController < ApplicationController
     user = User.login(params[:email], params[:password])
     if user
       session[:user_id] = user.id
+      cookies.signed[:user] = user
       redirect_to root_path
     else
       flash[:notice] = "Your email or password is not correct"
@@ -20,6 +21,7 @@ class SessionController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    cookies.signed[:user_id] = nil
     render 'new'
   end
 end

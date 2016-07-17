@@ -1,0 +1,20 @@
+<div class="container conversation">
+  <div class="row header">
+    <h1><%= @recipient.name %></h1>
+  </div>
+  <div class="conversation-content" id="messages" data-conversation-id="<%= @conversation.id %>" data-sid="<%= current_user.id %>" data-rid="<%= @recipient.id %>">
+    <% if @messages.any? %>
+      <%= render partial: "/messages/message", collection: @messages, locals: {curr_user: current_user} %>
+    <% end %>
+  </div>
+  <div class="row message-sent-box">
+    <%= form_for @message do |f| %>
+      <fieldset class="form-group">
+        <%= f.text_field :content, class: "form-control", placeholder: "Your message ..." %>
+      </fieldset>
+      <fieldset class="form-group">
+        <%= f.submit "Send", class: "btn btn-primary" %>
+      </fieldset>
+    <% end %>
+  </div>
+</div>

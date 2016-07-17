@@ -1,13 +1,16 @@
 <div class="card user">
   <div class="card-block">
-    <div>
-      <img src="avatar-default.png">
-      <span class="card-text lead"><%= friend.name %></span>
-    </div>
-    <div>
-      <%= link_to friendships_path(friend_id: friend.id), method: :post, class: "add-btn" do %>
-        <i class="fa fa-comments-o fa-lg" aria-hidden="true"></i> Send message
-      <% end %>
+    <div class="row">
+      <div class="avatar"><%= current_user.short_name_avatar %></div>
+      <div class="user-block">
+        <p class="card-text lead user-name"><%= friend.name %></p>
+        <%= link_to conversations_path(sid: current_user.id, rid: friend.id), method: :post, class: "" do %>
+          <i class="fa fa-comments-o fa-lg" aria-hidden="true"></i> Send message
+        <% end %>
+        <%= link_to friendship_path(id: friend.id), method: :delete, data: {confirm: "Are you sure?"}, style: "margin-left: 20px;" do %>
+          <i class="fa fa-trash fa-lg" aria-hidden="true"></i> Unfriend
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

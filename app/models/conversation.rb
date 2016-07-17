@@ -10,6 +10,10 @@ class Conversation < ApplicationRecord
   end
 
   scope :involving, -> (user) do
-    where("conversations.sender_id = ? OR conversations.recipient_id = ?", user.id, user.id)
+    where("conversations.sender_id = ? OR conversations.recipient_id = ?", user.id, user.id).order(updated_at: :desc)
+  end
+
+  def interlocutor(current_user)
+    sender == current_user ? recipient : sender
   end
 end

@@ -1,0 +1,7 @@
+<div class="row message">
+  <div class="col-xs-1 avatar-icon"><%= image_tag("avatar-default.png", alt: "avatar logo", size: "50") %></div>
+  <div class="col-xs-11 triangle-right left message-container">
+    <p class="user-name"><%= message.user.name %> <span class="time"><%= time_ago_in_words(message.created_at) %></span></p>
+    <p class="message-content"><%= message.content %></p>
+  </div>
+</div>

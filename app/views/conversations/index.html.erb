@@ -1,0 +1,37 @@
+<div class="container conversation">
+  <div class="row header">
+    <div class="col-sm-6">
+      <h3>Last recently conversations</h3>
+    </div>
+    <div class="col-sm-6" style="text-align:right;">
+      <%= link_to new_conversation_path, data: {target: "#friendsModal", toggle: "modal"}, class: "" do %>
+        <i class="fa fa-comments-o fa-lg" aria-hidden="true"></i> New message
+      <% end %>
+    </div>
+  </div>
+  <div class="friend-modal">
+    <div class="modal fade" id="friendsModal" tabindex="-1" role="dialog" aria-labelledby="Friends" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="exampleModalLabel">New message to</h4>
+            <!-- <p class="new-message-email"><%= link_to "or send to your friend's email", new_conversation_email_path %></p> -->
+          </div>
+          <div class="modal-body">
+            <div class="list-group">
+              <%= render partial: "friend", collection: @friends %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row conversation-container">
+    <div class="list-group">
+      <%= render @conversations %>
+    </div>
+  </div>
+</div>

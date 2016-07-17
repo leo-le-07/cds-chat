@@ -1,0 +1,8 @@
+<%= link_to conversations_path(sid: current_user.id, rid: friend.id), method: :post, class: "list-group-item" do %>
+  <div class="row">
+    <div class="avatar"><%= friend.short_name_avatar %></div>
+    <div class="user-block">
+      <p class="lead user-name"><%= friend.name %></p>
+    </div>
+  </div>
+<% end %>
