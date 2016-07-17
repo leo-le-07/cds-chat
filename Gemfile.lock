@@ -63,6 +63,8 @@ GEM
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.14)
+    filepicker-rails (2.1.0)
+      rails (>= 3.2)
     font-awesome-rails (4.6.3.1)
       railties (>= 3.2, < 5.1)
     globalid (0.3.6)
@@ -204,6 +206,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   faker
+  filepicker-rails
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-infinite-pages

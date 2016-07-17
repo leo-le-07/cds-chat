@@ -38,6 +38,7 @@ gem 'faker'
 gem 'kaminari'
 gem 'jquery-infinite-pages'
 gem 'omniauth-facebook', '~> 3.0'
+gem 'filepicker-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
