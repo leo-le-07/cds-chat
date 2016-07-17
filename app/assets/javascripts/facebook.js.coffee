@@ -1,4 +1,4 @@
-jQuery ->
+jQuery(document).on 'turbolinks:load', ->
   $('body').prepend('<div id="fb-root"></div>')
 
   $.ajax

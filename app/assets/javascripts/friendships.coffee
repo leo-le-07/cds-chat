@@ -1,4 +1,4 @@
-jQuery ->
+jQuery(document).on 'turbolinks:load', ->
   if $('.infinite-new-friends').size() > 0
     $(window).on 'scroll', ->
       more_posts_url = $('.pagination a').attr('href')
