@@ -38,6 +38,8 @@ The following **optional** functionality is complete:
 
 The following **additional** features are implemented:
 
+* [x] You can send many messages in the one time. The recipient will be see the number of messages he/she doesn't read.
+* [x] When the conversation dialog so long, it can scroll bottom automatically. I think it's a good UX for users
 * [x] I use ActionCable to create a unique channel for 2 users for chatting. This feature requires redis installation. However, I can't verify my credit account on heroku so I can't install **redistogo** addon. In the end of the day, it only works on my local machine :)
 * [x] I think it becomes a chat app better when I merge the incoming and sent messages in to one page
 
