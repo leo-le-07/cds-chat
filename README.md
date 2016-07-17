@@ -49,11 +49,10 @@ Here's a walkthrough of implemented user stories:
 
 ![Video Walkthrough](walkthrough.gif)
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
-
 ## Notes
 
 * I met the problem with ActionCable when it can't access the session to get the current_user. It leads to the consequence that I can't detect when a user come or out the connection of the reservation channel.
+* In case of you cann't sign up or sign in by Facebook, please press Ctrl + F5 to refresh the page in order to make it work. I still don't know the root cause, but maybe cause of Turbolinks javascript.
 
 ## License
 
