@@ -29,5 +29,6 @@ jQuery(document).on 'turbolinks:load', ->
       if $.trim(inputText.val()).length > 0
         App.conversations.send_message inputText.val(), messages.data('conversation-id')
         inputText.val('')
+        filepicker.val('')
       e.preventDefault()
       return false
