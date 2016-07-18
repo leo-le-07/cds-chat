@@ -10,7 +10,12 @@ class Conversation < ApplicationRecord
   end
 
   scope :involving, -> (user) do
-    where("conversations.sender_id = ? OR conversations.recipient_id = ?", user.id, user.id).order(updated_at: :desc)
+    banned_friends_id = user.friendships.where(banned: true).select(:friend_id)
+    if banned_friends_id.any?
+      where("(conversations.sender_id = ? OR conversations.recipient_id = ?) AND conversations.sender_id NOT IN (?) AND conversations.recipient_id NOT IN (?)", user.id, user.id, banned_friends_id, banned_friends_id).order(updated_at: :desc)
+    else
+      where("conversations.sender_id = ? OR conversations.recipient_id = ?", user.id, user.id).order(updated_at: :desc)
+    end
   end
 
   def interlocutor(current_user)

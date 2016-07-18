@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
   resources :friendships
+  resources :friend_blocks, only: [:create, :destroy, :index]
+  get 'friendships/block/:id' => 'friendships#block'
   resources :messages, only: [:create]
   resources :conversations
   resources :users

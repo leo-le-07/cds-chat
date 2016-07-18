@@ -7,8 +7,11 @@
         <%= link_to conversations_path(sid: current_user.id, rid: friend.id), method: :post, class: "" do %>
           <i class="fa fa-comments-o fa-lg" aria-hidden="true"></i> Send message
         <% end %>
-        <%= link_to friendship_path(id: friend.id), method: :delete, data: {confirm: "Are you sure?"}, style: "margin-left: 20px;" do %>
+        <%= link_to friendship_path(id: friend.id), method: :delete, data: {confirm: "Do you really want to unfriend?"}, style: "margin-left: 20px;" do %>
           <i class="fa fa-trash fa-lg" aria-hidden="true"></i> Unfriend
+        <% end %>
+        <%= link_to friend_blocks_path(id: friend.id), method: :post, data: {confirm: "Do you really want to block this user?"}, style: "margin-left: 20px;" do %>
+          <i class="fa fa-ban fa-lg" aria-hidden="true"></i> Block
         <% end %>
       </div>
     </div>

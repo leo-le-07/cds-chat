@@ -1,0 +1,13 @@
+<div class="card user">
+  <div class="card-block">
+    <div class="row">
+      <div class="avatar"><%= current_user.short_name_avatar %></div>
+      <div class="user-block">
+        <p class="card-text lead user-name"><%= friend.name %></p>
+        <%= link_to friend_block_path(id: friend.id), method: :delete do %>
+          <i class="fa fa-unlock fa-lg" aria-hidden="true"></i> Unblock
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

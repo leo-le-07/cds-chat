@@ -2,7 +2,8 @@ class FriendshipsController < ApplicationController
   before_action :deny_anonymous_user
 
   def index
-    @friends = current_user.friends
+    banned_friends_id = current_user.friendships.where(banned: true).select(:friend_id)
+    @friends = current_user.friends.where("friend_id not in (?)", banned_friends_id)
   end
 
   def new
@@ -20,6 +21,10 @@ class FriendshipsController < ApplicationController
       flash[:error] = "Something wrong!"
       redirect_to new_friendship_path
     end
+  end
+
+  def block
+
   end
 
   def destroy
